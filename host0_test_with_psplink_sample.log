@@ -117,7 +117,6 @@ pspsh -e 'cp EBOOT.PBP ms0:/PSP/GAME/host0_test/'
 pspsh -e 'cp PARAM.SFO ms0:/PSP/GAME/host0_test/'
 
 test_chdir: running sceIoChdir, switching to [ms0:/psp]
-main: running test in main thread
 run_test: running test in main thread
 test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed

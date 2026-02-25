@@ -116,8 +116,6 @@ int main(int argc, char *argv[])
 
 	test_chdir("ms0:/psp");
 
-	LOG("%s: running test in main thread\n", __func__);
-
 	run_test();
 
 	LOG("Exiting in 5 seconds...\n");
