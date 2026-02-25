@@ -1,0 +1,23 @@
+host0 test
+run_test: running test in main thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+test_thread_func: running test in new thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+test_chdir: running sceIoChdir, switching to [ms0:/bsb]
+run_test: running test in main thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+test_thread_func: running test in new thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+test_chdir: running sceIoChdir, switching to [ms0:/psp]
+main: running test in main thread
+run_test: running test in main thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+test_thread_func: running test in new thread
+test_listing_dir: failed opening [host0:/], 0x80020321
+test_reading_file: failed opening [host0:/pspsh_install.sh] for reading, 0x80020321
+Exiting in 5 seconds...

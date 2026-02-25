@@ -29,14 +29,14 @@ static void init_logging(){
 	pspDebugScreenInit();
 }
 
-static void test(){
+static void test_listing_dir(){
 	int dirfd = sceIoDopen("host0:/");
 	if (dirfd < 0){
-		LOG("%s: failed opening host0:/, 0x%x\n", __func__, dirfd);
+		LOG("%s: failed opening [host0:/], 0x%x\n", __func__, dirfd);
 		return;
 	}
 
-	LOG("%s: host0:/ opened\n", __func__);
+	LOG("%s: [host0:/] opened\n", __func__);
 
 	while(1){
 		SceIoDirent dir = {0};
@@ -53,6 +53,30 @@ static void test(){
 		}
 		LOG("%s: %s 0x%x\n", __func__, dir.d_name, dir.d_stat.st_mode);
 	}
+}
+
+static void test_reading_file(){
+	int fd = sceIoOpen("host0:/pspsh_install.sh", PSP_O_RDONLY, 0777);
+	if (fd < 0){
+		LOG("%s: failed opening [host0:/pspsh_install.sh] for reading, 0x%x\n", __func__, fd);
+		return;
+	}
+
+	char read_buf[256] = {0};
+	int read_result = sceIoRead(fd, read_buf, sizeof(read_buf));
+	if (read_result < 0){
+		LOG("%s: failed reading from [host0:/pspsh_install.sh], 0x%x\n", __func__, read_result);
+	}else{
+		LOG("%s: dumping file [host0:/pspsh_install.sh]\n", __func__);
+		LOG("%s", read_buf);
+		LOG("%s", "\n");
+	}
+	sceIoClose(fd);
+}
+
+void test(){
+	test_listing_dir();
+	test_reading_file();
 }
 
 static int test_thread_func(SceSize args, void *argp){

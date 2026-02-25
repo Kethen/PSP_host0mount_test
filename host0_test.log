@@ -1,0 +1,17 @@
+host0 test
+run_test: running test in main thread
+test: failed opening host0:/, 0x80020321
+test_thread_func: running test in new thread
+test: failed opening host0:/, 0x80020321
+test_chdir: running sceIoChdir, switching to [ms0:/bsb]
+run_test: running test in main thread
+test: failed opening host0:/, 0x80020321
+test_thread_func: running test in new thread
+test: failed opening host0:/, 0x80020321
+test_chdir: running sceIoChdir, switching to [ms0:/psp]
+main: running test in main thread
+run_test: running test in main thread
+test: failed opening host0:/, 0x80020321
+test_thread_func: running test in new thread
+test: failed opening host0:/, 0x80020321
+Exiting in 5 seconds...
