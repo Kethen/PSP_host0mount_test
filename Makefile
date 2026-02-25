@@ -1,0 +1,17 @@
+TARGET = host0_test
+OBJS = main.o
+LIBS =
+BUILD_PRX=1
+PSP_FW_VERSION = 660
+
+CFLAGS = -O2 -G0 -Wall
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+ENCRYPT=1
+EXTRA_TARGETS = EBOOT.PBP
+PSP_EBOOT_TITLE = host0 test
+
+PSP_LARGE_MEMORY=0
+
+PSPSDK = $(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak
