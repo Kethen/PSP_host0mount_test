@@ -1,0 +1,48 @@
+name: Build package
+
+on: [ push, pull_request, workflow_dispatch ]
+
+# written referencing apollo save tool psp's CI
+
+jobs:
+  build_pkg:
+    runs-on: ubuntu-24.04
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v5
+      with:
+        submodules: true
+
+    - name: Install server build deps
+      run: |
+        sudo apt update
+        sudo apt install -y gcc libsqlite3-dev podman
+
+    - name: Download PSP SDK
+      run: |
+        curl -sL https://github.com/pspdev/pspdev/releases/download/v20250601/pspdev-ubuntu-latest-x86_64.tar.gz | tar xvz -C ./
+
+    - name: Set env vars
+      run: |
+        echo "sha_name=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+        echo "PSPDEV=${GITHUB_WORKSPACE}/pspdev" >> $GITHUB_ENV
+        echo "${GITHUB_WORKSPACE}/pspdev/bin" >> $GITHUB_PATH
+
+    - name: Build
+      run: |
+        make clean
+        make
+        mkdir -p PSP/GAME/host0_test
+        mv EBOOT.PBP PSP/GAME/host0_test/
+        mv PARAM.SFO PSP/GAME/host0_test/
+
+    - name: Push package artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: host0_test_${{ env.sha_name }}
+        path: |
+           PSP
+           host0_test_with_psplink_sample.log
+           host0_test_without_psplink_sample.log
+        if-no-files-found: error

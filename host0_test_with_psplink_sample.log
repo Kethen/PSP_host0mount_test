@@ -4,6 +4,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
@@ -32,6 +33,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
@@ -61,6 +63,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
@@ -89,6 +92,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
@@ -119,6 +123,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
@@ -147,6 +152,7 @@ test_listing_dir: [host0:/] opened
 test_listing_dir: . 0x11ed
 test_listing_dir: .. 0x116d
 test_listing_dir: .git 0x11ed
+test_listing_dir: .github 0x11ed
 test_listing_dir: Dockerfile 0x21a4
 test_listing_dir: EBOOT.PBP 0x21a4
 test_listing_dir: Makefile 0x21a4
